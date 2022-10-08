@@ -41,8 +41,37 @@ def problem4(string):
 
 
 # p5 ##############################
-def problem5():
-    print("TODO")
+def problem5(matrix):
+    if not matrix:
+        return []
+    startrow, endrow, startcol, endcol = 0, len(matrix[0]) - 1, 0, len(matrix[0]) - 1
+    array = []
+    while startrow <= endrow or startcol <= endcol:
+
+        #
+        # start row = 1
+        # end row = 2
+        # start col = 0
+        # end col = 1
+
+        # r
+        for i in range(startcol, endcol + 1):
+            array.append(matrix[startrow][i])
+        startrow += 1
+        # d
+        for i in range(startrow, endrow + 1):
+            array.append(matrix[i][endcol])
+        endcol -= 1
+
+        # l
+        for i in range(endcol, startcol - 1, -1):
+            array.append(matrix[endrow][i])
+        endrow -= 1
+        # u
+        for i in range(endrow, startrow - 1, -1):
+            array.append(matrix[i][startcol])
+        startcol += 1
+    print(array)
 
 
 # p6 ##############################
@@ -89,11 +118,12 @@ def main():
     # problem2Vowels()
     # problem3("hello world", "o")
     # problem4("TodayIsCamelCase")
+    problem5([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13,14,15,16]])
     # problem6(156651)
     # problem7("hello0123o123")
     # problem8(256)
     # problem9("Hello")
-     problem10("HI I AM    ")
+    # problem10("HI I AM    ")
 
 
 if __name__ == "__main__":
