@@ -24,7 +24,7 @@ def problem1GCD():
 # p2 ###########################
 def problem2Vowels():
     string = input("Enter string: ")
-    vowels = [letter for letter in string if letter in ["a", "e", "i", "o", "u"]]
+    vowels = [letter for letter in string.lower() if letter in ["a", "e", "i", "o", "u"]]
     print("Number of vowels: ", len(vowels))
 
 
@@ -47,12 +47,6 @@ def problem5(matrix):
     startrow, endrow, startcol, endcol = 0, len(matrix[0]) - 1, 0, len(matrix[0]) - 1
     array = []
     while startrow <= endrow or startcol <= endcol:
-
-        #
-        # start row = 1
-        # end row = 2
-        # start col = 0
-        # end col = 1
 
         # r
         for i in range(startcol, endcol + 1):
@@ -85,9 +79,9 @@ def problem6(number):
 
 # p7 ##############################
 def problem7(string):
-    number = int(re.search("[1-9]+[0-9]*", string).group(0))
-    print(number)
-
+    number = int(re.search("[0-9]+[0-9]*", string).group(0))
+    print(int(number))
+#"[1-9]+[0-9]*"
 
 # p8 ##############################
 def problem8(number):
@@ -96,6 +90,7 @@ def problem8(number):
         if number % 2:
             numberof1 += 1
         number //= 2
+
     print(numberof1)
 
 
@@ -114,16 +109,21 @@ def problem10(string):
 
 
 def main():
-    # problem1GCD()
-    # problem2Vowels()
-    # problem3("hello world", "o")
-    # problem4("TodayIsCamelCase")
-    problem5([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13,14,15,16]])
-    # problem6(156651)
-    # problem7("hello0123o123")
-    # problem8(256)
-    # problem9("Hello")
-    # problem10("HI I AM    ")
+     #problem1GCD()
+     #problem2Vowels()
+     problem3("hello world", "o")
+     problem4("TodayIsCamelCase")
+
+
+     problem5([['f', 'i', 'r', 's'],
+     ['n', '_', 'l', 't'],
+     ['o', 'b', 'a', '_'],
+     ['h', 't', 'y', 'p']]);
+     problem6(156651)
+     problem7("h103llo")
+     problem8(256)
+     problem9("Hello")
+     problem10("HI I AM    ")
 
 
 if __name__ == "__main__":

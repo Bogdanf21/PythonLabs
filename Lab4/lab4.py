@@ -127,9 +127,9 @@ def main():
           p4("a", "Hello There", href=" http://python.org ", _class=" my-link ", id=" someid"))
 
     # p5
-    s = {("key1", "", "inside", "out"), ("key2", "start", "middle", "winter")}
+    s = {("key1", "m", "middle", "e"), ("key2", "start", "middle", "winter")}
     d = {
-        "key1": "come,inside it's too cold out", "key3": "this is not valid"}
+        "key1": "middle", "key3": "this is not valid"}
     print("(5)")
     p5(s, d)
 
